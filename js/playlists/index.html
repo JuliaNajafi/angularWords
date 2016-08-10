@@ -1,1 +1,13 @@
 <h2> Playlist Index </h2>
+
+<h3> Playlists </h3>
+
+<h3><a ng-click="show = ! show"> Create a Playlist </a> </h3>
+<form data-ng-show="show">
+  <input type="text" placeholder="Playlist Category" data-ng-model="PlaylistIndexViewModel.playlist.category"></input>
+  <button type="button" data-ng-click="PlaylistIndexViewModel.create()">Create</button>
+</form>
+
+<div data-ng-repeat="playlist in PlaylistIndexViewModel.playlists">
+  <p>{{playlist.category}}</p>
+</div>

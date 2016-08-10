@@ -21,6 +21,12 @@
       templateUrl: "js/playlists/index.html",
       controller: "PlaylistIndexController",
       controllerAs: "PlaylistIndexViewModel"
+    })
+    .state("playlistShow", {
+      url: "/playlists/:id",
+      templateUrl: "js/playlists/show.html",
+      controller: "PlaylistShowController",
+      controllerAs: "PlaylistShowViewModel"
     });
 
   } // end of router function

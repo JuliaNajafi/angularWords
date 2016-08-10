@@ -1,0 +1,14 @@
+
+<h1> playlist show page </h1>
+
+<p> {{PlaylistShowViewModel.playlist.category}} </p>
+
+
+<p> search a word </p>
+<form ng-submit="PlaylistShowViewModel.search()">
+  <input id='input' type="text" placeholder="search word" ng-model="PlaylistShowViewModel.word">
+  <button type ="submit">Search!</button>
+</form>
+
+
+<p>{{PlaylistShowViewModel.usersearch}}</p>
