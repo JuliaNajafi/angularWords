@@ -11,4 +11,18 @@
 </form>
 
 
-<p>{{PlaylistShowViewModel.usersearch}}</p>
+<div ng-if="PlaylistShowViewModel.usersearch">
+  <form>
+    <p>{{PlaylistShowViewModel.usersearch}}</p>
+    <button type="button" data-ng-click="PlaylistShowViewModel.save()">Add</button>
+    <!-- <button data-ng-click="PlaylistShowViewModel.destroy()">Delete</button> -->
+  </form>
+</div>
+
+
+
+
+
+<div data-ng-repeat="word in PlaylistShowViewModel.playlist.words">
+  <p>{{word.otherword}}</p>
+</div>
