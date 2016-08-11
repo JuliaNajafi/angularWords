@@ -11,8 +11,8 @@
   function VocabFactoryFunction($resource){
 
 
-  return $resource("http://localhost:3000/playlists/:id/words");
-
+  return $resource("http://localhost:3000/words/:id", {}, {update: {method: "PUT"}
+});
 } // end of factory function
 
 }());

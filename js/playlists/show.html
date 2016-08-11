@@ -6,15 +6,17 @@
 
 <p> search a word </p>
 <form ng-submit="PlaylistShowViewModel.search()">
-  <input id='input' type="text" placeholder="search word" ng-model="PlaylistShowViewModel.word">
+  <input id='input' type="text" placeholder="search word" ng-model="PlaylistShowViewModel.phrase" />
   <button type ="submit">Search!</button>
 </form>
 
 
 <div ng-if="PlaylistShowViewModel.usersearch">
   <form>
-    <p>{{PlaylistShowViewModel.usersearch}}</p>
-    <button type="button" data-ng-click="PlaylistShowViewModel.save()">Add</button>
+    <p ng-model="PlaylistShowViewModel.word.englishword">{{PlaylistShowViewModel.phrase}}</p>
+    <p ng-model="PlaylistShowViewModel.word.otherword">{{PlaylistShowViewModel.usersearch}}</p>
+    <p ng-model="PlaylistShowViewModel.word.playlist_id">{{PlaylistShowViewModel.playlist.id}} </p>
+    <button type="button" data-ng-click="PlaylistShowViewModel.add()">Add</button>
     <!-- <button data-ng-click="PlaylistShowViewModel.destroy()">Delete</button> -->
   </form>
 </div>
