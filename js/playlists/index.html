@@ -9,5 +9,5 @@
 </form>
 
 <div data-ng-repeat="playlist in PlaylistIndexViewModel.playlists">
-  <p>{{playlist.category}}</p>
+  <p><a data-ui-sref="playlistShow({id: playlist.id})">{{playlist.category}}</a></p>
 </div>

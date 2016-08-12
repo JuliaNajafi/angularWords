@@ -21,24 +21,14 @@
 
 
     // searching for a word in api from wordFactory
-    var searchedWords = [];
     vm.search = function(){
       new WordFactory.get({phrase: vm.phrase}).$promise.then(function(response){
-        searchedWords.push(response.tuc[0].phrase.text)
         vm.usersearch = response.tuc[0].phrase.text
-        return response.tuc[0].phrase.text
+        return vm.usersearch
       })
     }
-    //
-    // vm.save = function(){
-    //   console.log(vm.usersearch)
-    //   vm.playlist.words.push({
-    //     englishword: vm.word,
-    //     otherword: vm.usersearch
-    //   })
-    //   vm.playlist.$save({id: $stateParams.id})
-    //   console.log(vm.playlist.words)
-    // }
+
+    // this adds searched words to the playlist and database
     vm.add = function(){
       vm.word = new VocabFactory({
         englishword: vm.phrase,
@@ -50,14 +40,20 @@
       })
     }
 
+    //to start flashcards
+    vm.start = function(){
+      vm.flashcard = vm.playlist.words[Math.floor((Math.random() * this.playlist.words.length) + 1)]
+      vm.myVar = false
+    }
+
+    vm.english = function(){
+      console.log(vm.flashcard.englishword)
+      vm.show = true;
+    }
 
 
 
 
-    // what i need to do is put an add button then update current playlist with the added word
-    // this.update = function () {
-    //   this.bleet.$update({id: $stateParams.id})
-    // };
 
 
 
