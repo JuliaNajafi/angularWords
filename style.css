@@ -36,3 +36,10 @@ div.card.small {
   text-align: center;
   padding-top: 30px;
 }
+
+button#delete.btn.waves-effect.waves-light.grey {
+  margin:auto;
+  display:block;
+  margin-bottom: 15px;
+
+}

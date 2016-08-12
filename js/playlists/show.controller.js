@@ -18,6 +18,11 @@
     //calling my api for playlist
     vm.playlist = PlaylistFactory.get({id: $stateParams.id})
 
+    vm.destroy = function(){
+      this.playlist.$delete({id: $stateParams.id}).then(function(response){
+        $state.go("playlistIndex");
+      })
+    }
 
 
     // searching for a word in api from wordFactory
@@ -54,12 +59,6 @@
 
 
 
-
-
-
-    // this.destroy = function(){
-    //   this.bleet.$delete({id: $stateParams.id});
-    // }
 
   }
 
