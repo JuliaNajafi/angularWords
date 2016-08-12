@@ -5,6 +5,17 @@ header {
   padding-top: 30px;
   padding-bottom: 30px;
 }
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
+
+h1, h2 {
+  font-family: 'Raleway', sans-serif;
+}
+h1{
+  text-align: center;
+}
 
 h2 {
   text-align: center;
@@ -43,3 +54,25 @@ button#delete.btn.waves-effect.waves-light.grey {
   margin-bottom: 15px;
 
 }
+p.chinese{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+a:hover {
+  color: purple;
+}
+a.create{
+  cursor: pointer;
+}
+/*div.welcomeImage{
+  align-items: center;
+}*/
+/*div > img {
+  height: auto;
+  max-height: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  border-radius: 40%;
+
+}*/

@@ -28,7 +28,7 @@
     </div>
 
     <div data-ng-repeat="word in PlaylistShowViewModel.playlist.words">
-      <p>{{word.otherword}}</p>
+      <p class="chinese">{{word.otherword}}</p>
     </div>
 
   </div>
@@ -40,8 +40,8 @@
     <br />
 
 
-    <h4><a ng-click="show = !show"> Flashcards </a> </h4>
-
+    <h4>Flashcards</h4>
+<!-- ng-click="show = !show" -->
     <div class="card small">
       <button class="btn waves-effect waves-light red" ng-click="PlaylistShowViewModel.start()">Click!</button>
       <h5>Word: {{PlaylistShowViewModel.flashcard.otherword}}</h5>

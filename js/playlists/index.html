@@ -1,13 +1,21 @@
-<h2> Playlist Index </h2>
+<h2> All Playlists </h2>
 
-<h3> Playlists </h3>
 
-<h3><a ng-click="show = ! show"> Create a Playlist </a> </h3>
-<form data-ng-show="show">
-  <input type="text" placeholder="Playlist Category" data-ng-model="PlaylistIndexViewModel.playlist.category"></input>
-  <button type="button" data-ng-click="PlaylistIndexViewModel.create()">Create</button>
-</form>
+<h3><a class="create" ng-click="show = ! show"> Create a Playlist </a> </h3>
 
-<div data-ng-repeat="playlist in PlaylistIndexViewModel.playlists">
-  <p><a data-ui-sref="playlistShow({id: playlist.id})">{{playlist.category}}</a></p>
+<div class="container">
+
+
+  <div data-ng-repeat="playlist in PlaylistIndexViewModel.playlists">
+    <div class="divider"></div>
+    <div class="section">
+      <p class="playlistlist"><a data-ui-sref="playlistShow({id: playlist.id})">{{playlist.category}}</a></p>
+    </div>
+  </div>
+
+  <form data-ng-show="show">
+    <input type="text" placeholder="Playlist Title" data-ng-model="PlaylistIndexViewModel.playlist.category"></input>
+    <button type="button" data-ng-click="PlaylistIndexViewModel.create()">Create</button>
+  </form>
+
 </div>
