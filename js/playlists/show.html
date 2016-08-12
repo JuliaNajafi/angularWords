@@ -3,7 +3,7 @@
 <h2> Playlist: {{PlaylistShowViewModel.playlist.category}} </h2>
 
 <!-- <p>{{PlaylistShowViewModel.playlist.category}}</p> -->
-<h3 class="showheader"><a data-ui-sref="playlistIndex">Other Playlists </a></h3>
+<h3 class="show"><a data-ui-sref="playlistIndex">Other Playlists </a></h3>
 
 
 
@@ -35,15 +35,21 @@
 
   <div class="col s12 m8 l9">
 
+    <br />
+    <br />
+
+
     <h4><a ng-click="show = !show"> Flashcards </a> </h4>
 
-    <button data-ng-show="show" ng-click="PlaylistShowViewModel.start()">Click!</button>
-    <h5 data-ng-show="PlaylistShowViewModel.flashcard">{{PlaylistShowViewModel.flashcard.otherword}}</h5>
-
-    <button data-ng-show="PlaylistShowViewModel.flashcard" ng-click="english = !english">English</button>
+    <div class="card small">
+      <button class="btn waves-effect waves-light red" ng-click="PlaylistShowViewModel.start()">Click!</button>
+      <h5>Word: {{PlaylistShowViewModel.flashcard.otherword}}</h5>
+      <button class="btn waves-effect waves-light red" ng-click="english = !english">Translate!</button>
       <div data-ng-show="english">
         <p>{{PlaylistShowViewModel.flashcard.englishword}}</p>
       </div>
+    </div>
+
 
 
   </div>

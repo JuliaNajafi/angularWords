@@ -21,8 +21,7 @@ h4 {
 #input:focus{
   border-bottom: black;
 }
-h3.showheader {
-
+h3.show{
   margin: 0 auto;
   border-bottom: 1px solid grey;
   color: black;
@@ -30,4 +29,10 @@ h3.showheader {
 
 div.col.s12.m4.l3{
   border-right: 1px solid grey;
+}
+div.card.small {
+  width: 60%;
+  margin: auto;
+  text-align: center;
+  padding-top: 30px;
 }
