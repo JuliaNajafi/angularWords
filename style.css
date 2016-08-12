@@ -5,3 +5,29 @@ header {
   padding-top: 30px;
   padding-bottom: 30px;
 }
+
+h2 {
+  text-align: center;
+}
+
+h3 {
+  font-size: 25px;
+  text-align: center;
+}
+h4 {
+  text-align: center;
+  color: black;
+}
+#input:focus{
+  border-bottom: black;
+}
+h3.showheader {
+
+  margin: 0 auto;
+  border-bottom: 1px solid grey;
+  color: black;
+}
+
+div.col.s12.m4.l3{
+  border-right: 1px solid grey;
+}

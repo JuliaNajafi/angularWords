@@ -1,39 +1,53 @@
 
-<h1> playlist show page </h1>
 
-<p>{{PlaylistShowViewModel.playlist.category}}</p>
-<p><a data-ui-sref="playlistIndex">Other Playlists </a></p>
+<h2> Playlist: {{PlaylistShowViewModel.playlist.category}} </h2>
 
-
-<p> search a word </p>
-<form ng-submit="PlaylistShowViewModel.search()">
-  <input id='input' type="text" placeholder="search word" ng-model="PlaylistShowViewModel.phrase" />
-  <button type ="submit">Search!</button>
-</form>
+<!-- <p>{{PlaylistShowViewModel.playlist.category}}</p> -->
+<h3 class="showheader"><a data-ui-sref="playlistIndex">Other Playlists </a></h3>
 
 
-<div ng-if="PlaylistShowViewModel.usersearch">
-  <form>
-    <p ng-model="PlaylistShowViewModel.word.englishword">{{PlaylistShowViewModel.phrase}}</p>
-    <p ng-model="PlaylistShowViewModel.word.otherword">{{PlaylistShowViewModel.usersearch}}</p>
-    <p ng-model="PlaylistShowViewModel.word.playlist_id">{{PlaylistShowViewModel.playlist.id}} </p>
-    <button type="button" data-ng-click="PlaylistShowViewModel.add()">Add</button>
-  </form>
-</div>
+
+<div class="row">
+
+  <div class="col s12 m4 l3">
+
+    <p> Search for a word, and add to the playlist! </p>
+    <form ng-submit="PlaylistShowViewModel.search()">
+      <input id='input' type="text" placeholder="search term" ng-model="PlaylistShowViewModel.phrase"/>
+      <button class="btn waves-effect red " type ="submit"><i class="material-icons">Search!</i></button>
+    </form>
 
 
-<div data-ng-repeat="word in PlaylistShowViewModel.playlist.words">
-  <p>{{word.otherword}}</p>
-</div>
+    <div ng-if="PlaylistShowViewModel.usersearch">
+      <form>
+        <p ng-model="PlaylistShowViewModel.word.englishword">Searched: {{PlaylistShowViewModel.phrase}}</p>
+        <p ng-model="PlaylistShowViewModel.word.otherword">Translation: {{PlaylistShowViewModel.usersearch}}</p>
+        <button class="btn-floating btn-large waves-effect waves-light red" type="button" data-ng-click="PlaylistShowViewModel.add()"><i class="material-icons"> + </i></button>
+      </form>
+    </div>
 
-<h3><a ng-click="show = !show"> Flashcards </a> </h3>
-<button data-ng-show="show" ng-click="PlaylistShowViewModel.start()">Click!</button>
-<h4 data-ng-show="PlaylistShowViewModel.flashcard">{{PlaylistShowViewModel.flashcard.otherword}}</h4>
+    <div data-ng-repeat="word in PlaylistShowViewModel.playlist.words">
+      <p>{{word.otherword}}</p>
+    </div>
 
-<button data-ng-show="PlaylistShowViewModel.flashcard" ng-click="english = !english">English</button>
-  <div data-ng-show="english">
-    <p>{{PlaylistShowViewModel.flashcard.englishword}}</p>
   </div>
 
+
+  <div class="col s12 m8 l9">
+
+    <h4><a ng-click="show = !show"> Flashcards </a> </h4>
+
+    <button data-ng-show="show" ng-click="PlaylistShowViewModel.start()">Click!</button>
+    <h5 data-ng-show="PlaylistShowViewModel.flashcard">{{PlaylistShowViewModel.flashcard.otherword}}</h5>
+
+    <button data-ng-show="PlaylistShowViewModel.flashcard" ng-click="english = !english">English</button>
+      <div data-ng-show="english">
+        <p>{{PlaylistShowViewModel.flashcard.englishword}}</p>
+      </div>
+
+
+  </div>
+
+</div>
 
   <!-- <button data-ng-click="PlaylistShowViewModel.destroy()">Delete</button> -->
